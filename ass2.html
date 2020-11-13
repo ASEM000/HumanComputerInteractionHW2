@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+        .hover:hover{
+            opacity: 50%;
+        }
+        
+        </style>
+        
+
+
+</head>
+<body >
+
+
+
+
+
+    <div class="jumbotron-fluid shadow-sm text-center"  style="background: white;">
+        <div class="display-1">Interpretable <a style="color: tomato;font-weight: bolder;">Plus+</a></div>
+        <div class="display-4">Explain the feature images in words</div>
+        
+    </div>
+
+    <div class="container">
+
+        <div class="row text-center">
+            <h5>
+                <br>
+                To avoid any misunderstanding or different interpretation of the superpixels, why dont we use NLP to explain the superpixels?
+                Moreover,can we do the opposite? 
+            </h5>
+            
+            </div>
+
+<div class="row ">
+<div class="col-5 offset-3">
+    <div class="display-4 text-center" style="font-weight: bolder;">
+        It's a labrador
+    </div>
+</div>
+    
+
+</div>
+
+
+    <div class="row">
+
+
+<div class="offset-2 col-8 ">
+    <img src='https://raw.githubusercontent.com/yougatup/figures/main/dog.jpg' alt="" class="hover" style="max-width: 90%;" >
+</div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 ">
+          <button id="mainbutton" type="button" class="btn btn-primary shadow-lg" onclick="show()" style="width: 100%;height:100px;border-radius: 50px;">
+            <div class="display-4">
+                Explain why ?
+            </div> </button>  
+        </div>
+    </div>
+ 
+
+
+
+ <div class="row">
+     <div class="col-3 hover feature" style="display:none" onclick="explain1()">
+        <div class="display-4 text-center" >1 feature</div>
+        <img src="https://i.imgur.com/M0TU5gv.png" alt="">  
+     </div>
+
+     <div class="col-3 hover feature" style="display: none;"  onclick="explain2()">
+        <div class="display-4 text-center">2 features</div>
+         <img src="https://i.imgur.com/WAAmdsv.png" alt="">
+     </div>
+    <div class="col-3 hover feature" style="display: none;" onclick="explain3()">
+        <div class="display-4 text-center">3 features</div>
+        <img src="https://i.imgur.com/mLFzXEl.png" alt="">
+    </div>
+
+    <div class="col-3 hover feature" style="display: none;" onclick="explain4()">
+        <div class="display-4 text-center">4 features</div>
+        <img src="https://i.imgur.com/0Xqvs1d.png" alt="">
+    </div>
+ </div>
+    
+<div class="row">
+<div class="col">
+    <div id="text" style="font-size:25px;">
+test
+    </div>
+</div>
+
+</div>
+</div>
+
+<script type="text/javascript">
+    function show(){
+        document.getElementById('mainbutton').innerHTML=`<div class=display-4 >click on feature to explore more </div>`
+        var elems = document.getElementsByClassName('feature');
+        for (var i=0;i<elems.length;i+=1){
+        elems[i].style.display = 'block';
+        }
+        // dev.innerHTML = "The model considers this as the most important feature , looking back at it the piece combines the nose and an eye of the dog";
+
+    }
+
+
+
+    function explain1(){
+        let dev = document.getElementById('text')
+        dev.innerHTML = 
+        `The model considers nose and eye the most important feature , 
+        `;
+    }
+
+
+    function explain2(){
+        let dev = document.getElementById('text')
+        dev.innerHTML = `
+        The model thinks an ear is the second most important feature after nose and eyes!
+        
+        `
+    }
+
+    function explain3(){
+        let dev = document.getElementById('text')
+        dev.innerHTML = `
+        Now the model got it all ! it added the other eye
+        
+        `
+    }
+
+
+    function explain4(){
+        let dev = document.getElementById('text')
+        dev.innerHTML = `
+        Now the model got it all ! it added the other ear
+        
+        `
+    }
+
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</body>
+</html>
